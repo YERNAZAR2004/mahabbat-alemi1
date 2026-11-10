@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#eeded5" />
+<title>Біздің махаббат әлеміміз ❤️</title>
+<style>
+:root { --rose:#a56b70; --rose-deep:#81545c; --cream:#faf6f2; --ink:#34272b; --soft:#efe6df; }
+* { box-sizing:border-box; }
+html,body { margin:0; width:100%; min-height:100%; font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:var(--ink); background:#e8d5c8; }
+button,input,textarea { font:inherit; }
+button { cursor:pointer; -webkit-tap-highlight-color:transparent; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid #d4a6ad; outline-offset:2px; }
+.desktop { min-height:100dvh; display:flex; align-items:center; justify-content:center; gap:58px; padding:25px; background:radial-gradient(ellipse at 15% 30%,#f9eee7 0%,transparent 45%),radial-gradient(ellipse at 90% 80%,#ccaaa5 0%,transparent 48%),linear-gradient(130deg,#e8d2c3,#f4e9df); }
+.desktop-copy { max-width:360px; }
+.desktop-copy .eyebrow { color:#805b60; letter-spacing:4px; font-size:12px; font-weight:750; text-transform:uppercase; }
+.desktop-copy h1 { margin:20px 0 16px; font-family:Georgia,'Times New Roman',serif; font-weight:600; font-size:clamp(32px,4vw,57px); line-height:1.09; }
+.desktop-copy p { color:#796366; line-height:1.65; font-size:17px; }
+.desktop-copy .tiny { margin-top:40px; font-size:13px; color:#997d7d; }
+.phone { position:relative; isolation:isolate; width:min(420px,100%); height:min(850px,calc(100dvh - 40px)); min-height:560px; border:8px solid #282224; border-radius:43px; background:#faf9f7; overflow:hidden; box-shadow:0 25px 90px #6c4b4b35,0 0 0 2px #c4aa9d; flex:none; }
+.screen { position:absolute; inset:0; }
+.intro { z-index:25; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px; background:radial-gradient(ellipse at 50% 43%,#f7eff0 0%,#fcfbfa 50%,#fff 92%); transition:opacity .8s ease,visibility .8s ease; }
+.intro.gone { opacity:0; visibility:hidden; pointer-events:none; }
+.intro .heart-holder { position:relative; width:190px; height:175px; display:grid; place-items:center; margin-bottom:48px; filter:drop-shadow(0 19px 23px #9b5c6480); animation:float 3.5s ease-in-out infinite; }
+.intro .heart-holder:before { content:""; position:absolute; width:180px; height:150px; border-radius:50%; background:#ca96985e; filter:blur(38px); }
+.heart-svg { width:166px; position:relative; animation:beat 2s ease-in-out infinite; }
+@keyframes beat { 0%,70%,100% {transform:scale(1)} 12%{transform:scale(1.06)} 24%{transform:scale(1)} 36%{transform:scale(1.035)} }
+@keyframes float { 50% {transform:translateY(-8px)} }
+.intro .pre { font-size:15px; color:#75686a; margin:0 0 9px; }
+.intro h2 { font-family:Georgia,'Times New Roman',serif; line-height:1.19; margin:0 0 13px; font-size:clamp(27px,7.6vw,35px); font-weight:600; color:#211d1e; }
+.intro .by { color:#777074; font-size:14px; margin:0 0 28px; }
+.primary { border:0; border-radius:13px; color:white; background:linear-gradient(135deg,#925b62,#bb8989); box-shadow:0 7px 17px #a26c6c33; padding:14px 26px; font-weight:650; }
+.primary:active { transform:scale(.97); }
+.intro .footer-note { position:absolute; bottom:28px; font-size:12px; color:#b5a8aa; }
+.gallery { background:#dcd1cb; }
+.scene { position:absolute; inset:0; overflow:hidden; background:linear-gradient(180deg,#aaa09a 0%,#bbb0a8 37%,#f5f0ea 70%,#b89b84 100%); perspective:710px; perspective-origin:50% 50%; touch-action:pan-x pan-y; }
+.world { width:0; height:0; position:absolute; top:50%; left:50%; transform-style:preserve-3d; will-change:transform; }
+.plane { position:absolute; transform-style:preserve-3d; backface-visibility:visible; }
+.wall { background:linear-gradient(to bottom,#eeece9 0%,#efe9e4 59%,#d5c9c2 60%,#f3efeb 62%,#ece8e4 99%); box-shadow:inset 0 0 80px #76635418; }
+.wall:after {content:""; position:absolute; bottom:7%; width:100%; height:3px; background:#d2c3b9; box-shadow:0 -58px 0 -1px #cdbeb6; }
+.wall.back { background:linear-gradient(to bottom,#e9e6e2,#eee9e5 59%,#d8cec8 60%,#f4f0ec 62%,#eee9e5); }
+.floor { background-color:#a37b61; background-image:repeating-linear-gradient(90deg,transparent 0 82px,#6c4b3c5b 83px 85px),repeating-linear-gradient(0deg,#bd9b80 0 30px,#c9a689 31px 61px,#a78169 62px 64px),linear-gradient(90deg,#8c6857,#dfb899,#8c6857); box-shadow:inset 0 0 100px #4a2c2070; }
+.ceiling { background:radial-gradient(ellipse at 45% 50%,#e5ddd7,#bdb0a8); }
+.molding { background:#d0c2b9; }
+.sign { display:flex; flex-direction:column; align-items:center; justify-content:center; color:#201b1b; text-align:center; text-shadow:0 1px 0 #fff8; }
+.sign h2 { font-family:Georgia,'Times New Roman',serif; font-size:49px; font-style:italic; font-weight:600; margin:0 0 8px; }
+.sign p { font-size:22px; margin:0; font-weight:600; }
+.sign span { margin-top:18px; font-family:Georgia,serif; color:#8d6968; letter-spacing:2px; font-size:15px; }
+.wall-label { display:flex; align-items:center; justify-content:center; font-size:16px; color:#a48c83; }
+.pedestal { background:linear-gradient(90deg,#c7c0ba,#fffdfa 18%,#f7f4f0 78%,#bdb0a7); border:1px solid #e8e2dc; box-shadow:12px 10px 18px #56433730; }
+.pedestal:after { content:""; position:absolute; left:5px;right:5px;top:-4px;height:8px;background:#f9f7f2;box-shadow:0 3px 4px #8d7b7152; }
+.pedestal-name { position:absolute; top:50%; left:0; right:0; text-align:center; font-size:15px; font-family:Georgia,serif; font-style:italic; color:#76635e; }
+.sculpture { display:flex; align-items:center; justify-content:center; filter:drop-shadow(12px 12px 8px #583f3f40); cursor:pointer; transition:filter .25s; }
+.sculpture:hover {filter:drop-shadow(0 0 24px #d18886);}
+.sculpture svg { height:100%; width:100%; }
+.shadow { background:radial-gradient(ellipse,#533e3860 0%,#533e3800 70%); border-radius:50%; }
+.wall-art { position:absolute; display:flex; flex-direction:column; align-items:stretch; justify-content:center; cursor:pointer; pointer-events:auto; }
+.picture-frame { width:100%; height:86%; padding:10px; border:10px ridge #4b3731; background:#e8dfd2; box-shadow:5px 9px 15px #291d1b54,0 0 0 2px #c9a886; }
+.picture-frame img { display:block; width:100%; height:100%; object-fit:cover; background:#bec1c6; }
+.art-plate { margin:9px auto 0; background:#f2eeeb; padding:3px 11px; font-family:Georgia,serif; font-size:11px; min-width:60%; text-align:center; color:#5a4c46; box-shadow:0 1px 2px #0002; }
+.lamp { background:linear-gradient(180deg,#1f191b 0 13%,#cfaf7f 21% 32%,#66503b 38%,transparent 40%); filter:drop-shadow(0 0 15px #f7d48b80); }
+.lamp:after {content:"";position:absolute;inset:22% 2% 0;background:linear-gradient(#f5e2bc40,#fff0);clip-path:polygon(36% 0,64% 0,100% 100%,0 100%);}
+.letter-stand { background:linear-gradient(90deg,#7a513e,#bb8266 20% 80%,#80523f);border:2px solid #56382d; box-shadow:9px 16px 12px #34281e44; }
+.letter-envelope { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(150deg,#f8eddc,#eee1cd);border:5px solid #e4d6bd;box-shadow:10px 14px 22px #392c2544;color:#87545b;cursor:pointer; }
+.letter-envelope .envelope-icon { font-size:78px; line-height:1; }
+.letter-envelope span { font-family:Georgia,serif; font-size:20px; color:#5a3a40; }
+.rug { background:repeating-linear-gradient(90deg,#96545c 0 14px,#a96a70 14px 18px); border:14px double #d9afa2; opacity:.9; }
+.ui-top { position:absolute; z-index:5; inset:15px 14px auto; display:flex; align-items:flex-start; justify-content:space-between; pointer-events:none; }
+.nameplate { background:#fffcf9ed; padding:11px 14px; border-radius:13px; box-shadow:0 6px 20px #43302a26; min-width:110px; }
+.nameplate b { font-size:14px; display:block; }
+.nameplate small { font-size:12px; display:block; margin-top:4px; color:#6f6563; }
+.top-actions {display:flex;gap:8px;}
+.icon-btn {border:1px solid #e3dbd4;background:#fffcf9ed;width:43px;height:43px;display:grid;place-items:center;border-radius:14px;box-shadow:0 6px 16px #3d2c2920;color:#453b3a;font-size:20px;pointer-events:auto;}
+.ui-bottom {position:absolute; z-index:5; bottom:18px;left:17px;right:17px;display:flex;align-items:flex-end;justify-content:space-between;pointer-events:none;}
+.joystick {pointer-events:auto; width:118px;height:118px;border:1px solid #fff9;border-radius:50%;background:#ffffff32;backdrop-filter:blur(7px);display:grid;place-items:center;touch-action:none;box-shadow:inset 0 0 20px #fff5;}
+.stick { width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 4px 12px #34252340;transform:translate(0px,0px);transition:transform .05s linear; }
+.nav-actions {display:flex;gap:8px;align-items:center;pointer-events:auto;}
+.nav-actions button {border:1px solid #ffffff8f; background:#fff9;color:#453939;height:49px;border-radius:12px;padding:0 13px;backdrop-filter:blur(10px);box-shadow:0 6px 16px #503c3628;font-size:14px;font-weight:700;}
+.nav-actions .next {color:#fff;background:var(--rose-deep);border:0;padding:0 14px;}
+.nav-actions button:disabled {opacity:.5;cursor:default;}
+.room-tip {position:absolute;z-index:5;left:50%;bottom:153px;transform:translateX(-50%);border-radius:20px;padding:7px 13px;background:#fffaf0af;color:#594541;font-size:11px;white-space:nowrap;pointer-events:none;transition:opacity .5s;}
+.room-tip.hidden {opacity:0;}
+.toast {z-index:41;position:absolute;top:74px;left:50%;transform:translateX(-50%);width:max-content;max-width:85%;background:#fdf8f2f3;color:#6f4650;box-shadow:0 5px 24px #332a2a30;border-radius:13px;padding:11px 15px;font-size:13px;display:none;text-align:center;}
+.toast.show {display:block;}
+.overlay {position:absolute;z-index:30;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:#241a1a83;backdrop-filter:blur(8px);}
+.overlay.open {display:flex;}
+.dialog {position:relative;width:100%;max-height:88%;background:#fffcf9;border-radius:23px;padding:26px 21px 22px;box-shadow:0 20px 60px #1e141449;overflow-y:auto;}
+.close {position:absolute;right:13px;top:13px;border:1px solid #ede5e0;background:white;border-radius:50%;width:34px;height:34px;font-size:22px;display:grid;place-items:center;color:#6b5755;}
+.dialog h3 {margin:0 37px 8px 0;font-family:Georgia,'Times New Roman',serif;font-size:26px;}
+.dialog p {color:#726463;line-height:1.55;font-size:14px;}
+.photo-view {background:#f5f0e9;box-shadow:0 3px 14px #31241f18;padding:8px;margin:21px 0 16px;}
+.photo-view img {width:100%;height:260px;object-fit:cover;display:block;}
+.photo-caption {font:700 19px Georgia,serif;text-align:center;margin-bottom:11px;}
+.photo-controls {display:flex;align-items:center;gap:10px;justify-content:center;}
+.photo-controls button,.secondary {background:#fff;border:1px solid #dfd5d0;color:#674d50;padding:10px 15px;border-radius:10px;font-weight:700;}
+.photo-controls span {font-size:13px;color:#786a68;}
+.replace {display:block;text-align:center;margin-top:18px;font-size:13px;color:#945d67;cursor:pointer;text-decoration:underline;}
+.paper {background:repeating-linear-gradient(#faf0df 0 34px,#e3d6c79c 35px 36px);margin:26px 0 8px;padding:32px 22px;box-shadow:2px 4px 15px #5a403b30;transform:rotate(-1deg);font-family:Georgia,'Times New Roman',serif;color:#65434b;min-height:290px;line-height:2.15;white-space:pre-wrap;font-size:15px;}
+.paper::first-line {font-size:20px;font-style:italic;}
+.small {font-size:12px!important;color:#958383!important;}
+.field {display:block;font-size:13px;font-weight:700;color:#6b5358;margin-top:15px;}
+.field input,.field textarea {margin-top:7px;width:100%;padding:12px 13px;background:#fff;border:1px solid #daccc7;border-radius:10px;color:#3d3032;resize:vertical;font-size:14px;}
+.field textarea {min-height:110px;line-height:1.5;}
+.settings-actions {display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;}
+.guide {line-height:1.65;font-size:14px;color:#5c4b4b;}
+.guide b {color:#a16167;}
+@media (max-width:790px) { .desktop {padding:0;display:block;min-height:100dvh;background:none;} .desktop-copy {display:none;} .phone {width:100vw;height:100dvh;min-height:0;border:0;border-radius:0;box-shadow:none;} .ui-bottom {bottom:max(15px,env(safe-area-inset-bottom));} }
+@media (prefers-reduced-motion:reduce) { .heart-svg,.intro .heart-holder {animation:none;} }
+</style>
+</head>
+<body>
+<div class="desktop">
+  <div class="desktop-copy"><div class="eyebrow">ӘР СӘТ — БІР ЕСТЕЛІК</div><h1>Біздің махаббат әлеміміз <span style="color:#a86e74">♥</span></h1><p>Бір адамға арналған ерекше виртуалды әлем. Естеліктер галереясын аралап, жүректен шыққан хатты оқы.</p><div class="tiny">♥ Махаббатпен жасалған шағын 3D тәжірибе</div></div>
+  <main class="phone" aria-label="Біздің махаббат әлеміміз">
+    <section class="screen intro" id="intro"><div class="heart-holder"><svg class="heart-svg" viewBox="0 0 200 185" aria-label="Жүрек" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hgrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a96770"/><stop offset=".55" stop-color="#9c5c64"/><stop offset="1" stop-color="#75434c"/></linearGradient></defs><path d="M100 172 C73 150 15 114 15 67 C15 13 76 4 100 43 C125 4 185 13 185 67 C185 114 127 150 100 172 Z" fill="url(#hgrad)"/><path d="M100 43 C81 12 34 12 22 50" fill="none" stroke="#dfb0ad" stroke-width="4" opacity=".22"/></svg></div><p class="pre" id="introPre">Нана, бұл әлем саған арналған</p><h2>Біздің махаббат әлеміміз</h2><p class="by" id="introBy">Назар жасады</p><button class="primary" id="openWorld">Ашу ❤️</button><div class="footer-note">Біз туралы кішкентай әлем ♡</div></section>
+    <section class="screen gallery" id="gallery" aria-label="3D галерея">
+      <div id="scene" class="scene"><div id="world" class="world"></div></div>
+      <div class="ui-top"><div class="nameplate"><b id="plateName">Нана үшін</b><small id="roomName">Кіреберіс</small></div><div class="top-actions"><button class="icon-btn" id="musicBtn" title="Музыка" aria-label="Музыка">♫</button><button class="icon-btn" id="helpBtn" title="Көмек" aria-label="Көмек">?</button><button class="icon-btn" id="menuBtn" title="Баптаулар" aria-label="Баптаулар">☰</button></div></div>
+      <div id="roomTip" class="room-tip">Жылжу үшін джойстикті қозға ♡</div>
+      <div class="ui-bottom"><div class="joystick" id="joystick" aria-label="Қозғалу джойстигі"><div class="stick" id="stick"></div></div><div class="nav-actions"><button id="backBtn" title="Алдыңғы бөлме">←</button><button class="next" id="nextBtn">Келесі бөлме →</button></div></div>
+      <div class="toast" id="toast"></div>
+    </section>
+    <section class="overlay" id="photoOverlay" aria-hidden="true"><div class="dialog"><button class="close" data-close="photoOverlay" aria-label="Жабу">×</button><h3>Біздің естеліктер</h3><p>Әр фотосурет — жүректегі бір сәт.</p><div class="photo-view"><img id="bigPhoto" alt="Естелік суреті" /></div><div id="photoCaption" class="photo-caption"></div><div class="photo-controls"><button id="prevPhoto">←</button><span id="photoCount">1 / 6</span><button id="nextPhoto">→</button></div><label class="replace">📷 Өз фотосуретіңмен ауыстыру<input id="photoUpload" type="file" accept="image/*" hidden /></label></div></section>
+    <section class="overlay" id="letterOverlay" aria-hidden="true"><div class="dialog"><button class="close" data-close="letterOverlay" aria-label="Жабу">×</button><h3>Жүректен жазылған хат 💌</h3><p>Тек ол ғана оқысын...</p><div id="letterPaper" class="paper"></div><p class="small">Хатты өзгерту үшін ☰ баптауларын аш.</p></div></section>
+    <section class="overlay" id="helpOverlay" aria-hidden="true"><div class="dialog"><button class="close" data-close="helpOverlay" aria-label="Жабу">×</button><h3>Қалай қозғалуға болады?</h3><div class="guide"><p><b>📱 Телефонда:</b> сол жақтағы ақ джойстикті жылжыт. Сахнаға саусағыңды тигізіп, көлденең сүйреу арқылы оңға-солға қара.</p><p><b>💻 Компьютерде:</b> <b>W / A / S / D</b> — жүру, <b>← / →</b> — бұрылу. Тышқанмен сүйреп те қарауға болады.</p><p><b>🖼️ Суреттерді</b>, <b>❤️ мүсінді</b> немесе <b>💌 хатты</b> басып көр. Төменгі батырмалармен бөлмелерді ауыстыр.</p><p>☰ арқылы аттарды, хатты және фотоларды өзгерте аласың.</p></div></div></section>
+    <section class="overlay" id="settingsOverlay" aria-hidden="true"><div class="dialog"><button class="close" data-close="settingsOverlay" aria-label="Жабу">×</button><h3>Әлемді өзіңе бейімде ❤️</h3><p>Аттарды, фотоларды, хатты өзгертуге болады. Өзгерістер осы браузерде сақталады.</p><label class="field">Кімге арналады?<input id="recipientInput" maxlength="35" placeholder="Нана" /></label><label class="field">Кім жасады?<input id="senderInput" maxlength="35" placeholder="Назар" /></label><label class="field">Махаббат хаты<textarea id="letterInput" rows="7"></textarea></label><label class="field">Фото атаулары (әр жолға бір атау)<textarea id="titlesInput" rows="6"></textarea></label><div class="settings-actions"><button class="primary" id="saveSettings">Сақтау ❤️</button><button class="secondary" id="selectPhotos">Фото жүктеу</button><button class="secondary" id="exportSite" title="Өзгерістерді HTML файлына енгізіп сақтау">📤 GitHub-қа арналған файлды алу</button><button class="secondary" id="selectMusic">Өз музыкамды таңдау</button></div><input type="file" id="settingsPhotos" accept="image/*" multiple hidden /><input type="file" id="musicUpload" accept="audio/*" hidden /><p class="small">Үлкен фотосуреттер жүктегенде олар автоматты түрде кішірейтіледі. Музыка файлы тек ағымдағы ашық бетте сақталады.</p></div></section>
+  </main>
+</div>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const dataDefault={recipient:'Нана',sender:'Назар',letter:'Қымбаттым Нана,\n\nБұл әлемді саған арнап жасадым. Әрбір сурет — біз үшін ерекше естелік, әрбір сәт — жүрегімде мәңгі қалатын бақыт.\n\nБірге өткізген әр күнім үшін саған рақмет. Алдымызда әлі қаншама әдемі жол, қаншама қуанышты сәт күтіп тұр.\n\nСені шексіз жақсы көремін. Жүрегім әрдайым сенімен! ❤️\n\n— Назар',titles:["Алғашқы кездесу 16.07.2026", "Нәнәмнің торты және кино 26.07.2026", "Бәйге төбеде 01.08.2026", "Әңгімелесіп бірге жүретін кеш 26.08.2026", "Толбо көлде 03.09.2026", "Астанада Нәнәм екеміз бір бірімзді қимай екі жаққа оқуға кеткен сәт 10.09.2026"]};
+const storageKey='mahabbat-alemi-v2';
+let saved={};try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}}catch(e){}
+let published={};try{published=JSON.parse($('publishedData')?.textContent||'{}')||{}}catch(e){}
+const state={...dataDefault,...published,...saved,titles:Array.isArray(saved.titles)&&saved.titles.length===6?saved.titles:Array.isArray(published.titles)&&published.titles.length===6?published.titles:dataDefault.titles,photos:Array.isArray(saved.photos)?saved.photos:Array.isArray(published.photos)?published.photos:[]};
+let room=0,photoIdx=0,entered=false,cam={x:0,z:650,yaw:0},heldKeys=new Set(),stick={x:0,y:0}, dragging=false,dragAt=null,lastFrame=performance.now(),musicOn=false,ctx=null,musicTimer=null,ownAudio=null,toastTimeout=null;
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify(state))}catch(e){toast('Сақтау орны толды. Кішірек фотоларды пайдаланып көр.')}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const artPalettes=[['#f7a580','#fae0a3','#42364f','#25233c'],['#35415e','#ffc6a1','#483e69','#282c4a'],['#111e3d','#718aaf','#c1d0de','#161c2b'],['#f5bba1','#ffdebd','#94758a','#534765'],['#75a6b1','#f5c78e','#657f8b','#303f52'],['#dcae9d','#f6e2ce','#9c7483','#483342']];
+function makeArt(i){const p=artPalettes[i];let stars='';for(let j=0;j<26;j++){const x=((j*173+i*59)%1150)+25,y=((j*97+i*41)%295)+26;stars+=`<circle cx="${x}" cy="${y}" r="${j%3+1.3}" fill="#fff" opacity="${.27+(j%4)*.13}"/>`;}const snow=i===2?Array.from({length:64},(_,j)=>`<circle cx="${j*187%1200}" cy="${j*131%690}" r="${1+j%3}" fill="#fff" opacity=".7"/>`).join(''):'';
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="${p[0]}"/><stop offset="1" stop-color="${p[1]}"/></linearGradient><radialGradient id="sun"><stop stop-color="#fff6d4"/><stop offset="1" stop-color="#ffe0a644"/></radialGradient></defs><rect width="1200" height="780" fill="url(#sky)"/>${stars}<circle cx="${i===2?230:890}" cy="210" r="${i===2?80:128}" fill="url(#sun)" opacity=".95"/><path d="M0 565L150 420 320 580 520 400 730 570 960 390 1200 520V780H0Z" fill="${p[2]}" opacity=".55"/><path d="M0 635L260 545 510 640 810 525 1200 640V780H0Z" fill="${p[3]}"/><path d="M0 695Q300 630 560 697T1200 678V780H0Z" fill="#161b2b" opacity=".65"/>${snow}<g fill="#171b29" transform="translate(610 455)"><circle cx="-36" cy="25" r="29"/><path d="M-62 58Q-98 103 -78 190L-62 260H-31L-27 155 -19 260H13L15 135Q26 81 -8 58Z"/><circle cx="68" cy="34" r="30"/><path d="M45 69Q14 128 39 171L24 249H108L96 161Q123 123 89 69Z"/><path d="M-17 98Q4 90 35 114L33 128Q5 110 -14 122Z"/><path d="M59 72Q105 90 97 137" fill="none" stroke="#171b29" stroke-width="17"/></g><path d="M0 735Q600 698 1200 735" fill="none" stroke="#ffffff45" stroke-width="6"/></svg>`;
+return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);}
+const artwork=Array.from({length:6},(_,i)=>makeArt(i));
+// Суреттер GitHub репозиторийіндегі photos бумасынан оқылады.
+const githubPhotos=Array.from({length:6},(_,i)=>`photos/0${i+1}.jpg`);
+function getPhoto(i){return state.photos[i]||githubPhotos[i];}
+// Фотосурет әлі жүктелмесе, уақытша сурет көрсетіледі.
+document.addEventListener('error',e=>{
+  const img=e.target;
+  if(!(img instanceof HTMLImageElement))return;
+  const match=(img.getAttribute('src')||'').match(/^photos\/0([1-6])\.jpg$/);
+  if(match)img.src=artwork[Number(match[1])-1];
+},true);
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),2600);}
+function makePlane(parent,cls,w,h,x,y,z,rotY=0,rotX=0,html=''){const el=document.createElement('div');el.className='plane '+cls;el.style.width=w+'px';el.style.height=h+'px';el.style.marginLeft=-w/2+'px';el.style.marginTop=-h/2+'px';el.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateY(${rotY}deg) rotateX(${rotX}deg)`;el.innerHTML=html;parent.append(el);return el;}
+function setupRoom(){const world=$('world');world.innerHTML='';
+makePlane(world,'wall',1500,560,-450,-35,-220,90);makePlane(world,'wall',1500,560,450,-35,-220,-90);makePlane(world,'wall back',900,560,0,-35,-968);makePlane(world,'wall',900,560,0,-35,825,180);
+makePlane(world,'floor',900,1550,0,245,-220,0,90);makePlane(world,'ceiling',900,1550,0,-315,-220,0,-90);
+for(const x of [-440,440]) for(const z of [-735,-95,340]) makePlane(world,'molding',14,480,x,0,z, x<0?90:-90);
+if(room===0){
+makePlane(world,'sign',540,180,0,-112,-958,0,0,`<h2>${escapeHtml(state.recipient)} үшін</h2><p>Біздің махаббат әлеміміз</p><span>ЕСТЕЛІКТЕР ГАЛЕРЕЯСЫ</span>`);
+makePlane(world,'rug',280,650,0,238,-370,0,90);
+makePlane(world,'shadow',250,140,0,240,-280,0,90);
+makePlane(world,'pedestal',220,210,0,130,-345,0,0,`<div class="pedestal-name">${escapeHtml(state.sender)} ұсынады</div>`);
+const sculpt=makePlane(world,'sculpture',175,162,0,-68,-320,0,0,`<svg viewBox="0 0 220 205"><defs><linearGradient id="sculptGradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#dfafa0"/><stop offset=".45" stop-color="#c18075"/><stop offset="1" stop-color="#8b4d54"/></linearGradient></defs><path d="M110 189 C72 158 16 120 16 70 C16 15 78 3 110 50 C142 3 204 15 204 70 C204 120 148 158 110 189Z" fill="url(#sculptGradient)" stroke="#854b50" stroke-width="3"/><path d="M109 50 C86 19 41 24 28 58" fill="none" stroke="#fff" stroke-width="6" opacity=".22"/></svg>`);sculpt.addEventListener('click',()=>toast('Бұл жүрек саған арналған ❤️'));
+for(let side of [-1,1])makePlane(world,'lamp',70,220,side*442,-95,-260,side<0?90:-90);
+} else if(room===1){
+makePlane(world,'sign',600,165,0,-116,-957,0,0,'<h2>Біздің сәттер</h2><p>Әр сурет — бір естелік</p>');
+for(let i=0;i<6;i++){const x=i%2===0?-434:434,z=120-Math.floor(i/2)*390;const item=makePlane(world,'wall-art',260,215,x,-75,z,x<0?90:-90,`<div class="picture-frame"><img src="${getPhoto(i)}" alt="${escapeHtml(state.titles[i])}" /></div><div class="art-plate">${escapeHtml(state.titles[i])}</div>`);item.tabIndex=0;item.setAttribute('role','button');item.setAttribute('aria-label',state.titles[i]+' суретін ашу');item.addEventListener('click',()=>showPhoto(i));item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPhoto(i)}});makePlane(world,'lamp',100,110,x,-245,z,x<0?90:-90);}
+// Алдыңғы жақтағы екі картина алғашқы сәттен-ақ көрінеді.
+for(const [j,index] of [[0,1],[1,2]]) {
+const x=j===0?-155:155, z=j===0?-245:-365, angle=j===0?18:-18;
+makePlane(world,'pedestal',220,130,x,165,z-13,angle);
+const display=makePlane(world,'wall-art',270,226,x,-36,z,angle,0,`<div class="picture-frame"><img src="${getPhoto(index)}" alt="${escapeHtml(state.titles[index])}" /></div><div class="art-plate">${escapeHtml(state.titles[index])}</div>`);
+display.tabIndex=0;display.setAttribute('role','button');display.addEventListener('click',()=>showPhoto(index));display.addEventListener('keydown',e=>{if(e.key==='Enter')showPhoto(index)});
+}
+makePlane(world,'rug',265,750,0,238,-300,0,90);
+} else {
+makePlane(world,'sign',610,180,0,-123,-956,0,0,'<h2>Саған жазылған хат</h2><p>Жүректен шыққан әрбір сөз...</p>');
+makePlane(world,'rug',280,670,0,238,-370,0,90);
+makePlane(world,'letter-stand',260,172,0,139,-350,0,0);
+const letter=makePlane(world,'letter-envelope',255,218,0,-44,-322,0,0,'<div class="envelope-icon">✉</div><span>Саған ғана...</span>');letter.tabIndex=0;letter.setAttribute('role','button');letter.addEventListener('click',openLetter);letter.addEventListener('keydown',e=>{if(e.key==='Enter'){openLetter()}});
+for(let side of [-1,1]){makePlane(world,'lamp',95,170,side*434,-90,-300,side<0?90:-90);makePlane(world,'wall-art',205,200,side*432,-62,-20,side<0?90:-90,`<div class="picture-frame"><img src="${getPhoto(side<0?0:4)}" alt="Естелік" /></div><div class="art-plate">Махаббат</div>`);}
+}
+cam={x:0,z:645,yaw:0}; updateCamera(); $('roomName').textContent=['Кіреберіс','Естеліктер галереясы','Жүректен хат'][room];$('backBtn').disabled=room===0;$('nextBtn').textContent=room===2?'Басына оралу ↺':'Келесі бөлме →';$('plateName').textContent=state.recipient+' үшін';}
+function updateCamera(){ $('world').style.transform=`rotateY(${-cam.yaw}deg) translate3d(${-cam.x}px,35px,${710-cam.z}px)`;}
+function changeRoom(n){room=(n+3)%3;setupRoom();const tip=$('roomTip');tip.classList.remove('hidden');tip.textContent=['Жүрекке басып көр ❤️','Жақынырақ барып, суреттерді бас 🖼️','Хатты ашып көр 💌'][room];setTimeout(()=>tip.classList.add('hidden'),4300);}
+function openOverlay(id){$(id).classList.add('open');$(id).setAttribute('aria-hidden','false');}
+function closeOverlay(id){$(id).classList.remove('open');$(id).setAttribute('aria-hidden','true');}
+function anyOverlay(){return Array.from(document.querySelectorAll('.overlay')).some(el=>el.classList.contains('open'));}
+function showPhoto(i){photoIdx=(i+6)%6;updatePhoto();openOverlay('photoOverlay');}
+function updatePhoto(){$('bigPhoto').src=getPhoto(photoIdx);$('photoCaption').textContent=state.titles[photoIdx];$('photoCount').textContent=`${photoIdx+1} / 6`;}
+function openLetter(){$('letterPaper').textContent=state.letter;openOverlay('letterOverlay');}
+function fillText(){$('introPre').textContent=`${state.recipient}, бұл әлем саған арналған`;$('introBy').textContent=state.sender+' жасады';$('recipientInput').value=state.recipient;$('senderInput').value=state.sender;$('letterInput').value=state.letter;$('titlesInput').value=state.titles.join('\n');}
+function resizePhoto(file){return new Promise((resolve,reject)=>{if(!file.type.startsWith('image/')){reject(Error('Кескін емес'));return;}const reader=new FileReader();reader.onerror=reject;reader.onload=()=>{const img=new Image();img.onerror=reject;img.onload=()=>{const max=1000;const ratio=Math.min(1,max/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',.78));};img.src=reader.result;};reader.readAsDataURL(file);});}
+$('openWorld').onclick=()=>{entered=true;$('intro').classList.add('gone');setTimeout(()=>toast('Қош келдің! Бұл әлем саған арналған ❤️'),550);};
+$('backBtn').onclick=()=>changeRoom(Math.max(0,room-1));$('nextBtn').onclick=()=>changeRoom(room===2?0:room+1);
+$('helpBtn').onclick=()=>openOverlay('helpOverlay');$('menuBtn').onclick=()=>{fillText();openOverlay('settingsOverlay');};
+for(const btn of document.querySelectorAll('[data-close]'))btn.addEventListener('click',()=>closeOverlay(btn.dataset.close));
+for(const o of document.querySelectorAll('.overlay'))o.addEventListener('click',e=>{if(e.target===o)closeOverlay(o.id)});
+$('prevPhoto').onclick=()=>{photoIdx=(photoIdx+5)%6;updatePhoto();};$('nextPhoto').onclick=()=>{photoIdx=(photoIdx+1)%6;updatePhoto();};
+$('saveSettings').onclick=()=>{state.recipient=$('recipientInput').value.trim()||dataDefault.recipient;state.sender=$('senderInput').value.trim()||dataDefault.sender;state.letter=$('letterInput').value.trim()||dataDefault.letter;const titles=$('titlesInput').value.split('\n').map(x=>x.trim()).filter(Boolean);state.titles=Array.from({length:6},(_,i)=>titles[i]||dataDefault.titles[i]);persist();fillText();setupRoom();closeOverlay('settingsOverlay');toast('Өзгерістер сақталды! ❤️');};
+$('photoUpload').addEventListener('change',async(e)=>{const file=e.target.files[0];if(!file)return;try{state.photos[photoIdx]=await resizePhoto(file);persist();updatePhoto();setupRoom();toast('Фото ауыстырылды ❤️');}catch(err){toast('Фото жүктелмеді');}e.target.value='';});
+$('exportSite').onclick=()=>{
+  // GitHub Pages-ке жіберілетін HTML ішіне сақталған мәтіндер мен фотоларды енгіземіз.
+  // Бұл жергілікті браузер storage-ына тәуелді болмайды: Нана сілтемеден дәл осыларды көреді.
+  state.recipient=$('recipientInput').value.trim()||dataDefault.recipient;
+  state.sender=$('senderInput').value.trim()||dataDefault.sender;
+  state.letter=$('letterInput').value.trim()||dataDefault.letter;
+  const titles=$('titlesInput').value.split('\n').map(x=>x.trim()).filter(Boolean);
+  state.titles=Array.from({length:6},(_,i)=>titles[i]||dataDefault.titles[i]);
+  persist();
+  const page=document.documentElement.cloneNode(true);
+  page.querySelector('#intro')?.classList.remove('gone');
+  page.querySelector('#world')?.replaceChildren();
+  page.querySelectorAll('.overlay').forEach(el=>{el.classList.remove('open');el.setAttribute('aria-hidden','true');});
+  page.querySelector('#roomTip')?.classList.add('hidden');
+  page.querySelector('#publishedData')?.remove();
+  const embedded=document.createElement('script');
+  embedded.id='publishedData';embedded.type='application/json';
+  embedded.textContent=JSON.stringify({recipient:state.recipient,sender:state.sender,letter:state.letter,titles:state.titles,photos:state.photos}).replace(/</g,'\\u003c');
+  page.querySelector('head').append(embedded);
+  const pageContent='<!DOCTYPE html>\n'+page.outerHTML;
+  const blob=new Blob([pageContent],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='index.html';document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  toast('GitHub-қа арналған index.html дайын ❤️');
+};
+$('selectPhotos').onclick=()=>$('settingsPhotos').click();$('settingsPhotos').addEventListener('change',async e=>{const files=Array.from(e.target.files).slice(0,6);let count=0;for(let i=0;i<files.length;i++){try{state.photos[i]=await resizePhoto(files[i]);count++;}catch(error){}}persist();setupRoom();toast(count+' фото жүктелді ❤️');e.target.value='';});
+$('selectMusic').onclick=()=>$('musicUpload').click();$('musicUpload').addEventListener('change',async(e)=>{const file=e.target.files[0];if(!file)return;if(ownAudio){ownAudio.pause();URL.revokeObjectURL(ownAudio.src);}ownAudio=new Audio(URL.createObjectURL(file));ownAudio.loop=true;ownAudio.volume=.45;stopMusic();try{await ownAudio.play();musicOn=true;$('musicBtn').textContent='♫';toast('Өз музыкаң қосылды 🎵');}catch(err){toast('Музыканы қосу үшін ♫ батырмасын бас');}e.target.value='';});
+function synthNote(frequency,duration=.48,volume=.017){if(!ctx)return;const now=ctx.currentTime;const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='sine';osc.frequency.setValueAtTime(frequency,now);gain.gain.setValueAtTime(.00001,now);gain.gain.exponentialRampToValueAtTime(volume,now+.09);gain.gain.exponentialRampToValueAtTime(.00001,now+duration);osc.connect(gain).connect(ctx.destination);osc.start(now);osc.stop(now+duration+.03);}
+let step=0;function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null;}if(ownAudio)ownAudio.pause();musicOn=false;}
+$('musicBtn').onclick=async()=>{if(musicOn){stopMusic();$('musicBtn').textContent='♫';toast('Музыка тоқтатылды');return;}if(ownAudio){try{await ownAudio.play();musicOn=true;$('musicBtn').textContent='♪';return;}catch(e){toast('Музыканы ойнату мүмкін болмады');return;}}const C=window.AudioContext||window.webkitAudioContext;if(!C){toast('Бұл браузер музыканы қолдамайды');return;}if(!ctx)ctx=new C();await ctx.resume();musicOn=true;$('musicBtn').textContent='♪';const notes=[261.63,329.63,392,523.25,293.66,349.23,440,587.33,220,261.63,329.63,440,246.94,293.66,392,493.88];synthNote(notes[step%notes.length]);step++;musicTimer=setInterval(()=>{if(musicOn){synthNote(notes[step%notes.length]);step++;}},570);toast('Әуен қосылды 🎵');};
+const joy=$('joystick'),thumb=$('stick');let joyPointer=null;
+function setStick(e){const r=joy.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),len=Math.hypot(dx,dy),k=Math.min(len,38)/(len||1),x=dx*k,y=dy*k;thumb.style.transform=`translate(${x}px,${y}px)`;stick.x=x/38;stick.y=y/38;}
+joy.addEventListener('pointerdown',e=>{joyPointer=e.pointerId;joy.setPointerCapture(e.pointerId);setStick(e);e.preventDefault();});joy.addEventListener('pointermove',e=>{if(e.pointerId===joyPointer)setStick(e);});
+function resetStick(e){if(joyPointer===null||e.pointerId!==joyPointer)return;joyPointer=null;stick.x=stick.y=0;thumb.style.transform='translate(0,0)';}
+joy.addEventListener('pointerup',resetStick);joy.addEventListener('pointercancel',resetStick);joy.addEventListener('lostpointercapture',()=>{joyPointer=null;stick.x=stick.y=0;thumb.style.transform='translate(0,0)';});
+const scene=$('scene');scene.addEventListener('pointerdown',e=>{if(e.target.closest('.wall-art,.sculpture,.letter-envelope'))return;dragging=true;dragAt=e.clientX;scene.setPointerCapture(e.pointerId);});scene.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-dragAt;dragAt=e.clientX;cam.yaw=Math.max(-84,Math.min(84,cam.yaw-dx*.25));updateCamera();});scene.addEventListener('pointerup',()=>dragging=false);scene.addEventListener('pointercancel',()=>dragging=false);
+window.addEventListener('keydown',e=>{const typing=/INPUT|TEXTAREA/.test(document.activeElement?.tagName||'');if(e.key==='Escape'){document.querySelectorAll('.overlay.open').forEach(x=>closeOverlay(x.id));return;}if(typing)return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();heldKeys.add(e.key.toLowerCase());});window.addEventListener('keyup',e=>heldKeys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>heldKeys.clear());
+function loop(now){const dt=Math.min((now-lastFrame)/1000,.06);lastFrame=now;if(entered&&!anyOverlay()){
+const forward=((heldKeys.has('w')||heldKeys.has('arrowup'))?1:0)-((heldKeys.has('s')||heldKeys.has('arrowdown'))?1:0)-stick.y;
+const strafe=(heldKeys.has('d')?1:0)-(heldKeys.has('a')?1:0)+stick.x;
+const turn=(heldKeys.has('arrowright')?1:0)-(heldKeys.has('arrowleft')?1:0);
+cam.yaw=Math.max(-84,Math.min(84,cam.yaw+turn*89*dt));if(Math.abs(forward)+Math.abs(strafe)>.03){const rad=cam.yaw*Math.PI/180,spd=260*dt;cam.x+= (Math.sin(rad)*forward+Math.cos(rad)*strafe)*spd;cam.z+=(-Math.cos(rad)*forward+Math.sin(rad)*strafe)*spd;cam.x=Math.min(290,Math.max(-290,cam.x));cam.z=Math.min(735,Math.max(-520,cam.z));}updateCamera();}
+requestAnimationFrame(loop);}
+fillText();setupRoom();setTimeout(()=>$('roomTip').classList.add('hidden'),6500);requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
